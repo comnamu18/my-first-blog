@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>admin</title>
+    <link rel="stylesheet" href="include/css/Common.css">
+	
+
+</head>
+
+
+<!-- 주소(도 시/군) / 시작 날짜 + 시간 / 종료 날짜 + 시간 / 무료/유료-->
+
+<body>
+<div class="loginForm">
+
+	<div class="login">
+
+		<h1><img src="images/parking2.png" alt="주차장 서비스 admin login" width="500px" height="auto"></h1>
+
+		<form action="result.php" name="frmLog" id="frmLog" class="loginForm" method="post">
+		<fieldset>
+
+			<legend>주차장 서비스</legend>
+			<span class="address">
+				<label for="Address">주소</label>
+				<select name="Address" id="Address" onChange="redirect(this.options.selectedIndex)">
+				<option value="서울특별시" selected>서울특별시</option>
+				<option value="경기도">경기도</option>
+				<option value="강원도">강원도</option>
+				<option value="경상남도">경상남도</option>
+				<option value="경상북도">경상북도</option>
+				<option value="전라남도">전라남도</option>
+				<option value="전라북도">전라북도</option>
+				<option value="충청남도">충청남도</option>
+				<option value="충청북도">충청북도</option>
+				<option value="광주광역시">광주광역시</option>
+				<option value="대구광역시">대구광역시</option>
+				<option value="대전광역시">대전광역시</option>
+				<option value="부산광역시">부산광역시</option>
+				<option value="울산광역시">울산광역시</option>
+				<option value="인천광역시">인천광역시</option>
+				<option value="제주특별자치도">제주특별자치도</option>
+				</select>         
+
+				<select name="secondAddress" size="1" width="400px">
+				<option value="전체">전체</option>
+				<option value="강남구">강남구</option>
+				<option value="강동구">강동구</option>
+				<option value="강북구">강북구</option>
+				<option value="강서구">강서구</option>
+				<option value="관악구">관악구</option>
+				<option value="광진구">광진구</option>
+				<option value="구로구">구로구</option>
+				<option value="금천구">금천구</option>
+				<option value="노원구">노원구</option>
+				<option value="도봉구">도봉구</option>
+				<option value="동대문구">동대문구</option>
+				<option value="동작구">동작구</option>
+				<option value="마포구">마포구</option>
+				<option value="서대문구">서대문구</option>
+				<option value="서초구">서초구</option>
+				<option value="성동구">성동구</option>
+				<option value="성북구">성북구</option>
+				<option value="송파구">송파구</option>
+				<option value="양천구">양천구</option>
+				<option value="영등포구">영등포구</option>
+				<option value="용산구">용산구</option>
+				<option value="은평구">은평구</option>
+				<option value="종로구">종로구</option>
+				<option value="중구">중구</option>
+				<option value="중랑구">중랑구</option>
+				</select>
+				
+			</span>
+			
+			<!-- <span class="top">
+				<label for="myId">주차장</label>
+				<input type="text" id="sAdmId" name="sAdmId" maxlength="30" />
+			</span> -->
+			<br>
+			<span class="startTime">
+				<label for="startTime">시작 시간</label>
+				<input type="date" id="startDate" name="startDate" style="text-align:center; width:130px; height:20px"/>
+				<input type="time" id="startTime" name="startTime" style="text-align:center; width:120px; height:20px"/>
+				
+			</span>
+			<span class="endTime">
+				<label for="endTime">종료 시간</label>
+				<input type="date" id="endDate" name="endDate" style="text-align:center; width:130px; height:20px"/>
+				<input type="time" id="endTime" name="endTime" style="text-align:center; width:120px; height:20px"/>
+			</span>
+			<br>
+			<span class="isFree">
+				<label for="isFree">요금</label>
+				<select name="isFree" id="isFree">
+				<option value="상관없음" selected>상관 없음</option>
+				<option value="무료">무료</option>
+				<option value="유료">유료</option>
+				</select>  
+			</span>
+			<button type="submit" id="btnLogin" >검색</button>
+		</fieldset>
+		<script type="text/javascript" src="./include/js/selectAddress.js"></script>
+		</form>
+	</div>
+
+    <div class="footer admin">
+        COPYRIGHT(c) GoldRiver CO.,LTD. ALL RIGHTS RESRVED
+    </div>
+
+</div>
+
+<div id="dvProc" style="clear:both; position: relative; width:100%;">
+
+<iframe name="frProc" id="frProc" scrolling="no" frameborder="0" border="0" width="0" height="0"></iframe>
+
+</div>
+
+
+</body>
+</html>
+
+<script type="text/javascript">
+
+$(document).ready( function() {
+	$('.gnbZone').css({'height':$('.container').height()+'px'});
+	if ($('.gnbZone').height() > $('.container').height()) {
+		$("#dvProc").css("margin-top", $('.gnbZone').height()-830);
+	} else {
+		$("#dvProc").css("margin-top", $('.container').height()-700);
+	}
+	$("#frProc").css("display", "block").css("width", "99%").css("height", "100").attr("frameborder", "1").attr("scrolling", "yes");
+});
+
+</script>
+
+<script type="text/javascript">
+
+$(document).ready( function() {
+	
+	$("#btnLogin").click( function() {
+
+		var frmLog = "#frmLog";
+
+		$(frmLog).attr( "target", "frProc" );
+		$(frmLog).attr( "action", "./login_proc.asp" ); 
+		$(frmLog).submit(); 
+
+	});
+	$('#sAdmPw').keypress(function(e){
+		if (e.keyCode == 13) {
+			$('#btnLogin').click();
+		}
+	});
+
+});
+
+</script>

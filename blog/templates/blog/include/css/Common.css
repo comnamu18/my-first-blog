@@ -1,0 +1,45 @@
+@charset "utf-8";
+
+/********************
+    Default set
+********************/
+html {height:100%; padding:0; margin:0;}
+body {height:100%; padding:0;margin:0; font-family:'¸맑은 고딕','Malgun Gothic','돋움',Dotum,AppleGothic,sans-serif; font-size:12px; color:#767676}
+
+button,
+input,
+select,
+textarea {font-family:'¸맑은 고딕','Malgun Gothic','돋움',Dotum,AppleGothic,sans-serif; font-size:12px; color:#767676}
+input[type=file] { vertical-align:middle; }
+a{font-family:'맑은 고딕','Malgun Gothic','돋움',Dotum,AppleGothic,sans-serif; font-size:12px; text-decoration:none;  color:#767676}
+fieldset {border:0; margin:0; padding:0;}
+legend{display:none;}
+img { border:0;}
+input[type="radio"],input[type="checkbox"]{border:0;}
+
+a.overBlue2{color:#3f5c90; text-decoration:underline;}
+
+.tMod { font-weight: bold; color: #0177bd; }
+.tDel { font-weight: bold; color: #ed7e3b; }
+.tCan { font-weight: bold; color: #777; }
+
+ol, ul, li{ margin:0; padding:0;}
+
+
+
+/********************
+    LOGINPAGE
+********************/
+div.loginForm{position:absolute; left:50%; top:50%; height:280px; width:650px; margin-top:-9.4em; margin-left:-18.3em; font-size:15px;}
+div.login{background:#f6f6f6; border:3px solid #ed7e3b;}
+div.login h1{text-align:center; padding:30px 0 22px; margin:0 0 37px 0; border-bottom:1px solid #e7e7e7;}
+div.login .loginForm{position:relative; margin:0 0 60px 93px;}
+div.login fieldset{border:0; padding:0;}
+div.login legend{width:0; height:0; font-size:0; line-height:0; overflow:hidden; visibility:hidden; text-indent:-9999px;}
+div.login span{display:inline-block; padding-top:5px;}
+div.login span.top{margin-bottom:7px;}
+div.login span label{display:inline-block; width:75px; vertical-align:middle;}
+div.login span input{width:190px; height:25px; border:1px solid #c2c2c2; text-indent:5px; line-height:27px; vertical-align:middle;}
+div.login button{position:absolute; right:90px; top:25px; border:none; width:105px; height:65px; background:url("../../images/loginBtn.png") no-repeat left top; font-size:15px; color:#fff; cursor:pointer;}
+div.footer{text-align:center; color:#c2c2c2; font-size:11px; margin-top:10px;}
+div.footer.admin{font-size:12px; color:#767676;}
