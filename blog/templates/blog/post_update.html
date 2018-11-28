@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block searchBlock %}
+    <h1>UPDATE Contact</h1>
+    <p>Press name to update</p>
+{% endblock searchBlock %}
+
+{% block content %}
+    <table style="border:1px solid black;">
+        <tr style="border:1px solid black;">
+            <th style="border:1px solid black;">NAME</th>
+            <th style="border:1px solid black;">E-MAIL</th> 
+            <th style="border:1px solid black;">PHONE NUM</th>
+        </tr>
+
+        {% for contact in contacts %}
+        <tr style="border:1px solid black;">
+            <th style="border:1px solid black;">
+                <a href="{% url 'update specific' pk=contact.pk %}"> {{ contact.name }} </a>
+            </th>
+            <th style="border:1px solid black;">{{ contact.emailAdr }}</th> 
+            <th style="border:1px solid black;">{{ contact.phoneNum }}</th>
+        </tr>
+        {% endfor %}
+    </table>
+{% endblock content %}

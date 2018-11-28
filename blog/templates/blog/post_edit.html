@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block searchBlock %}
+    <h1>INSERT Contact</h1>
+{% endblock searchBlock %}
+
+{% block content %}
+    <form method="POST" class="post-form">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="save btn btn-default">INSERT</button>
+    </form>
+{% endblock %}

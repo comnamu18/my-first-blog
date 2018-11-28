@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>20145523 Web Prj3</title>
+    </head>
+    <body>
+        <div>
+            <a href="{% url 'index' %}">
+                    <h1>Web Prj3 20145523</h1>
+            </a>
+        </div>
+        <div>
+            {% block searchBlock %}
+            {% endblock searchBlock %}
+            <table>
+                <th>
+                    <a href="{% url 'insert'%}">
+                        <button class="button">insert</button>
+                    </a>
+                </th>
+                <th>
+                    <a href="{% url 'update'%}">
+                        <button class="button">update</button>
+                    </a>
+                </th>
+                <th>
+                    <a href="{% url 'delete'%}">
+                        <button class="button">delete</button>
+                    </a>
+                </th>
+                <th> 
+                    <a href="{% url 'search'%}">
+                        <button class="button">search</button>
+                    </a>
+                </th>
+                <th>
+                    <a href="{% url 'post_list' %}">
+                    <button class="button">list</button>
+                    </a>
+                </th>
+            </table>
+        </div>
+        {% block content %}
+        {% endblock content %}
+    </body>
+</html>
